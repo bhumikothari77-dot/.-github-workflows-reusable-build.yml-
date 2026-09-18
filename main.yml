@@ -31,7 +31,14 @@ on:
                        run: echo "Building ${{ inputs.app_name }} for ${{ inputs.environment }}"
 
       -              - name: Verify Docker Token 
-                       run: echo "Docker token is set: ${{ secrets.docker_token != " }}"
+                       env:
+                       Docker_token: ${{ secrets.docker_token }}
+                       run:|
+                       if [-n "$DOCKER_TOKEN" ]; then
+                       echo "Docker token is set: true"
+                       else
+                       echo "Docker token is set: false"
+                       fi
                
         
          
