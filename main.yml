@@ -12,7 +12,7 @@ on:
            description: "Environment name"
            type:string
            required: false
-           default: "stagging"
+           default: "staging"
 
            secrets:
               docker_token:
@@ -30,8 +30,8 @@ on:
                        - name:  Build application
                        run: echo "Building ${{ inputs.app_name }} for ${{ inputs.environment }}"
 
-      - name: Verify Docker Token
-        run: echo "Docker token is set: ${{ secrets.docker_token != '' }}"
+      -              - name: Verify Docker Token 
+                       run: echo "Docker token is set: ${{ secrets.docker_token != " }}"
                
         
          
